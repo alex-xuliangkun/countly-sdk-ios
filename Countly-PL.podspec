@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.14'
   s.watchos.deployment_target = '4.0'
   s.tvos.deployment_target = '10.0'
+  s.dependency 'PLCrashReporter'
 
   s.subspec 'Core' do |core|
     core.source_files = '*.{h,m}'
