@@ -98,6 +98,7 @@ NSString* const kCountlyCRKeyOB                = @"_ob";
 
     if (self.shouldUsePLCrashReporter)
     {
+        NSLog(@"---shouldUsePLCrashReporter： %d", COUNTLY_PLCRASHREPORTER_EXISTS);
 #ifdef COUNTLY_PLCRASHREPORTER_EXISTS
         [self startPLCrashReporter];
 #else
@@ -145,7 +146,7 @@ NSString* const kCountlyCRKeyOB                = @"_ob";
 - (void)startPLCrashReporter
 {
     PLCrashReporterSignalHandlerType type = self.shouldUseMachSignalHandler ? PLCrashReporterSignalHandlerTypeMach : PLCrashReporterSignalHandlerTypeBSD;
-    PLCrashReporterConfig* config = [PLCrashReporterConfig.alloc initWithSignalHandlerType:type symbolicationStrategy:PLCrashReporterSymbolicationStrategyNone];
+    PLCrashReporterConfig* config = [PLCrashReporterConfig.alloc initWithSignalHandlerType:type symbolicationStrategy:PLCrashReporterSymbolicationStrategyAll];
 
     self.crashReporter = [PLCrashReporter.alloc initWithConfiguration:config];
 
