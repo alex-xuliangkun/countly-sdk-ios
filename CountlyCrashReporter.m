@@ -98,7 +98,7 @@ NSString* const kCountlyCRKeyOB                = @"_ob";
 
     if (self.shouldUsePLCrashReporter)
     {
-        NSLog(@"---shouldUsePLCrashReporter： %d", COUNTLY_PLCRASHREPORTER_EXISTS);
+        NSLog(@"COUNTLY_PLCRASHREPORTER_EXISTS Value： %d", COUNTLY_PLCRASHREPORTER_EXISTS);
 #ifdef COUNTLY_PLCRASHREPORTER_EXISTS
         [self startPLCrashReporter];
 #else
